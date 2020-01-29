@@ -32,7 +32,7 @@ RUN mkdir /tmp/pure-ftpd/ && \
 FROM debian:stretch
 
 # feel free to change this ;)
-LABEL maintainer "Andrew Stilliard <andrew.stilliard@gmail.com>"
+LABEL maintainer "J3n50m4t"
 
 # install dependencies
 # FIXME : libcap2 is not a dependency anymore. .deb could be fixed to avoid asking this dependency
@@ -76,7 +76,7 @@ RUN chmod u+x /run.sh
 ENV PUBLICHOST localhost
 
 # couple available volumes you may want to use
-VOLUME ["/home/ftpusers", "/etc/pure-ftpd/passwd"]
+VOLUME ["/home/ftp", "/etc/pure-ftpd/passwd"]
 
 # startup
 CMD /run.sh -l puredb:/etc/pure-ftpd/pureftpd.pdb -E -j -R -P $PUBLICHOST
